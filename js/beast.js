@@ -2,8 +2,11 @@
 
 
 $(window).load(function() {
-  window.setTimeout(function() {
-    console.log('height', document.body.clientHeight);
-    parent.postMessage({type: 'height', value: document.body.clientHeight}, '*');
-  }, 100);
+  var height = 0;
+  window.setInterval(function() {
+    if (document.body.clientHeight != height) {
+      height = document.body.clientHeight;
+      parent.postMessage({type: 'height', value: height}, '*');
+    }
+  }, 1000);
 });
