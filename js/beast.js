@@ -2,6 +2,8 @@
 
 
 $(window).load(function() {
-  console.log('height', document.body.clientHeight);
-  parent.postMessage({type: 'height', value: document.body.clientHeight}, '*');
+  window.setTimeout(function() {
+    console.log('height', document.body.clientHeight);
+    parent.postMessage({type: 'height', value: document.body.clientHeight}, '*');
+  }, 100);
 });
