@@ -6,6 +6,7 @@ $(window).load(function() {
   window.setInterval(function() {
     if (document.body.clientHeight != height) {
       height = document.body.clientHeight;
+      console.log('height changed to', height);
       parent.postMessage({type: 'height', value: height}, '*');
     }
   }, 1000);
